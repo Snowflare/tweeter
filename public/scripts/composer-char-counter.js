@@ -8,8 +8,10 @@ $(document).ready(function() {
     let $count = $('output');
     if (value.length > 140){
       $count.text(`-${value.length - 140}`);
+      $count.css( "color", "red" );
     }else {
       $count.text(140 - value.length);
+      $count.css( "color", "black" );
     }
     
     
