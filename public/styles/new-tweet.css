@@ -21,6 +21,12 @@ output {
   line-height: 17px;
   margin-left: 2px;
 } */
+.error {
+  color: red;
+}
+.counter {
+  color: black;
+}
 textarea {
   z-index: 0;
   padding: 6px;

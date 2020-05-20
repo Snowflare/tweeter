@@ -1,17 +1,18 @@
 $(document).ready(function() {
   // --- our code goes here ---
-  const $textbox = jQuery('#tweet-text');
-  $textbox.on('keyup', function(event) {
-    console.log(event);
-    const value = $textbox.val();
-    console.log(value);
-    let $count = $('output');
+  $('#tweet-text').on('keyup', function(event) {
+    const value = $(this).val();
+    let counter = $(this).siblings().find('output')[0];
+    counter.innerHTML = `${140 - value.length}`;    
     if (value.length > 140){
-      $count.text(`-${value.length - 140}`);
-      $count.css( "color", "red" );
+      // $(counter).css( "color", "red" );
+      $(counter).removeClass('counter');
+      $(counter).addClass('error');
+
     }else {
-      $count.text(140 - value.length);
-      $count.css( "color", "black" );
+      // $(counter).css( "color", "black" );
+      $(counter).addClass('counter');
+      $(counter).removeClass('error');
     }
     
     
