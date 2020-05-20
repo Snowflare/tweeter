@@ -5,7 +5,28 @@
  */
 
 const createTweetElement = function(tweet) {
-  
+  const $tweet = `<article>
+  <header>
+    <img src=${tweet.user.avatars}> 
+    <div class="name">
+      <p>${tweet.user.name}</p>
+      <p class="lastname">${tweet.user.handle}</p>
+    </div>
+    
+  </header>
+  <p>
+    ${tweet.content.text}
+  </p>
+  <footer>
+    <p>
+      ${tweet.created_at}
+    </p>
+    <div>
+      <a >🚩</a><a>🔗</a><a>❤️</a>
+    </div>
+  </footer>
+</article>`
+return $tweet;
 }
 
 const tweetData = {
