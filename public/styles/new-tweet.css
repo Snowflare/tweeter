@@ -55,6 +55,13 @@ footer {
   justify-content: space-between;
   border-top: 3px solid black;
 }
+article>header>div {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  justify-content: space-between;
+}
 article > header {
   justify-content: start;
   display: flex;
@@ -62,8 +69,12 @@ article > header {
   background-image: none;
   flex-direction: row;
   height: 7vh;
-  width: 80%;
+  width: 100%;
 }
+article>header>div>p:nth-child(2){
+  color: transparent;
+}
+
 article:hover{
   box-shadow: 10px 5px 5px gray;
   text-shadow: 1px 1px 2px gray;
