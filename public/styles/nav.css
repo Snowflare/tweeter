@@ -1,5 +1,4 @@
 nav {
-  height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -7,9 +6,10 @@ nav {
   padding-right: 1.5em;
   padding-bottom: 1.5em;
   padding-left: 1.5em;
+  position: fixed; /* Set the navbar to fixed position */
+  top: 0; /* Position the navbar at the top of the page */
   
 }
 span {
-  font-family: 'Bungee';
-  
+  font-family: 'Bungee'; 
 }
