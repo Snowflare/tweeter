@@ -18,5 +18,8 @@ $(document).ready(function() {
     
     
   });
+  // $('article').on('hover', function() {
+  //   $(this).css()
+  // });
 
 });
