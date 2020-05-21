@@ -57,9 +57,11 @@ $(document).ready(function() {
         loadtweets();        
       });
       $(this).siblings('.validation').hide();
+      $(this).children('#tweet-text').val(''); // Empty textbox   
+      $(this).children('div').children('output')[0].innerHTML = '140'; // Reset counter
     }
     
-    //$(this).children('#tweet-text').val(''); // Empty textbox   
+    
   });
 
   
