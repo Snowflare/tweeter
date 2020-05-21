@@ -15,7 +15,7 @@ $(document).ready(function() {
       
     </header>
     <p>
-      ${tweet.content.text}
+      ${escape(tweet.content.text)}
     </p>
     <footer>
       <p>
@@ -33,14 +33,19 @@ $(document).ready(function() {
       $('main section:nth-child(2)').prepend(createTweetElement(tweet));
     }
   }
+  const loadtweets = function(){
+    $.getJSON('/tweets')
+    .then(function (tweets) {
+      renderTweets(tweets);  
+  })};
  
 
   $( "form" ).submit(function( event ) {
     event.preventDefault();
-    const value = $(this).children('#tweet-text').val().length;
+    const value = $(this).children('#tweet-text').val();
     console.log(value);
     
-    if (value === 0) {
+    if (value.length === 0) {
       alert("Submission cannot be empty!");
     } else if (value > 140) {
       alert("Submission cannot be longer than 140 characters!");
@@ -48,16 +53,20 @@ $(document).ready(function() {
       const data = $(this).serialize();
       $.post('/tweets', data)
         .then(function (response) {
-        loadtweets()});
+        loadtweets();
+      });
     }
-    
-   
+    $(this).children('#tweet-text').val(''); // Empty textbox   
   });
-  const loadtweets = function(){
-    $.getJSON('/tweets')
-    .then(function (tweets) {
-      renderTweets(tweets);  
-  })};
+
+  
+  // Escape function
+  const escape =  function(str) {
+    let div = document.createElement('div');
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  }
+  // Initialize page
   loadtweets();
 
 });
