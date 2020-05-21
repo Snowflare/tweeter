@@ -44,19 +44,19 @@ $(document).ready(function() {
     event.preventDefault();
     const value = $(this).children('#tweet-text').val();    
     if (value.length === 0) {
-      $(this).children('div').children('.validation')[0].innerHTML = 'Submission cannot be empty!';
-      $(this).children('div').children('.validation').css('color', 'red');
+      $(this).siblings('.validation')[0].innerHTML = '⚠️Submission cannot be empty!⚠️';
+
+      $(this).siblings('.validation').slideDown('slow');
     } else if (value.length > 140) {
-      $(this).children('div').children('.validation')[0].innerHTML = 'Submission cannot be longer than 140 characters!';
-      $(this).children('div').children('.validation').css('color', 'red');
+      $(this).siblings('.validation')[0].innerHTML = '⚠️Submission cannot be longer than 140 characters!⚠️';
+      $(this).siblings('.validation').slideDown('slow');
     } else {
       const data = $(this).serialize();
       $.post('/tweets', data)
         .then(function (response) {
-        loadtweets();
-        
+        loadtweets();        
       });
-      $(this).children('div').children('.validation').css('color', 'transparent');
+      $(this).siblings('.validation').hide();
     }
     
     //$(this).children('#tweet-text').val(''); // Empty textbox   

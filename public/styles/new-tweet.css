@@ -9,8 +9,11 @@ div {
   margin-top: 5px;
 }
 .validation {
-  color: transparent;
+  display: none;
+  color: red;
+  border: 3px solid red;
   margin: 0em;
+  text-align: center;
 }
 output {
   font-family: 'Bungee';
