@@ -42,21 +42,24 @@ $(document).ready(function() {
 
   $( "form" ).submit(function( event ) {
     event.preventDefault();
-    const value = $(this).children('#tweet-text').val();
-    console.log(value);
-    
+    const value = $(this).children('#tweet-text').val();    
     if (value.length === 0) {
-      alert("Submission cannot be empty!");
-    } else if (value > 140) {
-      alert("Submission cannot be longer than 140 characters!");
+      $(this).children('div').children('.validation')[0].innerHTML = 'Submission cannot be empty!';
+      $(this).children('div').children('.validation').css('color', 'red');
+    } else if (value.length > 140) {
+      $(this).children('div').children('.validation')[0].innerHTML = 'Submission cannot be longer than 140 characters!';
+      $(this).children('div').children('.validation').css('color', 'red');
     } else {
       const data = $(this).serialize();
       $.post('/tweets', data)
         .then(function (response) {
         loadtweets();
+        
       });
+      $(this).children('div').children('.validation').css('color', 'transparent');
     }
-    $(this).children('#tweet-text').val(''); // Empty textbox   
+    
+    //$(this).children('#tweet-text').val(''); // Empty textbox   
   });
 
   

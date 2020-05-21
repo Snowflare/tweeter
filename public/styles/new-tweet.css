@@ -8,19 +8,13 @@ div {
   justify-content: space-between;
   margin-top: 5px;
 }
+.validation {
+  color: transparent;
+  margin: 0em;
+}
 output {
   font-family: 'Bungee';
 }
-/* label {
-  position: absolute;
-  z-index: 1;
-  cursor: text;
-  pointer-events: none;
-  color: #999;
-  padding: 7px;
-  line-height: 17px;
-  margin-left: 2px;
-} */
 .error {
   color: red;
 }
@@ -40,6 +34,7 @@ textarea {
   border-bottom: 3px solid black;
   background-color: #f4f1ec;
 }
+
 article {
   border: 3px solid #172a3a;
   display: flex;
@@ -79,3 +74,5 @@ article:hover{
   box-shadow: 10px 5px 5px gray;
   text-shadow: 1px 1px 2px gray;
 }
+
+
