@@ -77,5 +77,8 @@ article:hover{
   box-shadow: 10px 5px 5px gray;
   text-shadow: 1px 1px 2px gray;
 }
-
+@media only screen and (min-width: 1024px) {
+  /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
+  
+}
 
