@@ -66,8 +66,14 @@ $(document).ready(function() {
 
   // Compose button listener
   $( ".button" ).on('click', function( event ) {
-    $('form').slideDown('slow'); // slide the form down
-    $('textarea').focus();  // set focus on the textbox
+    if ( $( "form" ).is( ":hidden" ) ) {
+      $('form').slideDown('slow');// slide the form down
+      $('textarea').focus();  // set focus on the textbox
+    } else {
+      $( 'form' ).hide('slow');
+    }
+     
+    
   });
   
   // Escape function
