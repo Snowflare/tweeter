@@ -15,3 +15,9 @@ This repository is the starter code for the project: Students will fork and clon
 
 - Express
 - Node 5.10.x or above
+
+## Screenshots
+
+!["Screenshot of Desktop Version"](https://github.com/Snowflare/tweeter/blob/master/docs/tweet-desktop1.png?raw=true)
+!["Screenshot of Desktop Version"](https://github.com/Snowflare/tweeter/blob/master/docs/tweet-desktop2.png?raw=true)
+!["Screenshot of Mobile Version"](https://github.com/Snowflare/tweeter/blob/master/docs/tweet-mobile.png?raw=true)
