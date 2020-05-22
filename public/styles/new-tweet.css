@@ -38,17 +38,17 @@ textarea {
   background-color: #f4f1ec;
 }
 body > header {
-  margin-top: 0em;
+  margin-bottom: 2em;
 }
 form {
-  padding-top: 2em;
+  margin-bottom: 2em;
   display: none;
 }
 article {
   border: 3px solid #172a3a;
   display: flex;
   flex-direction: column;
-  /* margin-top: 20px; */
+  margin-bottom: 2em;
   justify-content: center;
   padding: 1em;
   height: auto;
@@ -91,6 +91,8 @@ article:hover{
   box-shadow: 10px 5px 5px gray;
   text-shadow: 1px 1px 2px gray;
 }
+
+
 @media only screen and (min-width: 1024px) {
   /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   body{
@@ -100,12 +102,8 @@ article:hover{
   }
   .container{
     margin-top: 3em;
-    /* padding: 1em; */
-    /* width: 60%; */
-    /* margin-left: 1em;
-    margin-left: 1em; */
+    margin-right: 2em;
     width: 60%;
-    justify-content: space-around;
   }
   body > header {
     display: flex;
