@@ -20,7 +20,7 @@ $(document).ready(function() {
           </p>
           <footer>
             <p>
-              ${tweet.created_at}
+              ${moment(tweet.created_at).fromNow()}
             </p>
             <div>
               <a >🚩</a><a>🔗</a><a>❤️</a>
@@ -63,7 +63,7 @@ $(document).ready(function() {
       $(this).children('div').children('output')[0].innerHTML = '140'; // Reset counter
     }    
   });
-  
+
   // Compose button listener
   $( ".button" ).on('click', function( event ) {
     $('form').slideDown('slow');
