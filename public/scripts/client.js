@@ -40,6 +40,7 @@ $(document).ready(function() {
       renderTweets(tweets);  
   })};
  
+// New Tweet listener
 
   $( "form" ).submit(function( event ) {
     event.preventDefault();
@@ -60,12 +61,11 @@ $(document).ready(function() {
       $(this).siblings('.validation').hide();
       $(this).children('#tweet-text').val(''); // Empty textbox   
       $(this).children('div').children('output')[0].innerHTML = '140'; // Reset counter
-    }
-    
-    
+    }    
   });
+  
+  // Compose button listener
   $( ".button" ).on('click', function( event ) {
-    // $(this).parent().siblings('main').children('.new-tweet').children('form').slideDown('slow');
     $('form').slideDown('slow');
   });
   
