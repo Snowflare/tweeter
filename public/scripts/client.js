@@ -64,7 +64,10 @@ $(document).ready(function() {
     
     
   });
-
+  $( ".button" ).on('click', function( event ) {
+    // $(this).parent().siblings('main').children('.new-tweet').children('form').slideDown('slow');
+    $('form').slideDown('slow');
+  });
   
   // Escape function
   const escape =  function(str) {

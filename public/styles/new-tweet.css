@@ -42,12 +42,13 @@ body > header {
 }
 form {
   padding-top: 2em;
+  display: none;
 }
 article {
   border: 3px solid #172a3a;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   justify-content: center;
   padding: 1em;
   height: auto;
@@ -98,11 +99,13 @@ article:hover{
     justify-content: space-evenly;
   }
   .container{
-    padding: 1em;
+    margin-top: 3em;
+    /* padding: 1em; */
     /* width: 60%; */
-    margin-left: 1em;
-    margin-left: 1em;
+    /* margin-left: 1em;
+    margin-left: 1em; */
     width: 60%;
+    justify-content: space-around;
   }
   body > header {
     display: flex;
