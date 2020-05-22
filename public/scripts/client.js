@@ -7,7 +7,7 @@ $(document).ready(function() {
   // Single tweet render
   const createTweetElement = function(tweet) {
     return (
-        `<article>
+      `<article>
           <header>
             <img src=${tweet.user.avatars}> 
             <div class="name">
@@ -28,26 +28,27 @@ $(document).ready(function() {
             </div>
           </footer>
         </article>`);
-  }
+  };
   // All tweets render
   const renderTweets = function(tweets) {
-    $('main section:nth-child(2)').empty()
-    for (const tweet of tweets){
+    $('main section:nth-child(2)').empty();
+    for (const tweet of tweets) {
       $('main section:nth-child(2)').prepend(createTweetElement(tweet));
     }
-  }
+  };
   // Load tweets
-  const loadtweets = function(){
+  const loadtweets = function() {
     $.getJSON('/tweets')
-    .then(function (tweets) {
-      renderTweets(tweets);  
-  })};
+      .then(function(tweets) {
+        renderTweets(tweets);
+      });
+  };
  
-// New Tweet listener
+  // New Tweet listener
 
-  $( "form" ).submit(function( event ) {
+  $("form").submit(function(event) {
     event.preventDefault();
-    const value = $(this).children('#tweet-text').val();    
+    const value = $(this).children('#tweet-text').val();
     if (value.length === 0) { //Validation
       $(this).siblings('.validation')[0].innerHTML = '⚠️Submission cannot be empty!⚠️'; //Error message injection
 
@@ -58,23 +59,23 @@ $(document).ready(function() {
     } else {
       const data = $(this).serialize();
       $.post('/tweets', data)
-        .then(function (response) {
-        loadtweets();        
-      });
+        .then(function(response) {
+          loadtweets();
+        });
       $(this).siblings('.validation').hide('slow'); //Hide error text if tweet successful
-      $(this).children('#tweet-text').val(''); // Empty textbox   
+      $(this).children('#tweet-text').val(''); // Empty textbox
       $(this).children('div').children('output')[0].innerHTML = '140'; // Reset counter
-    }    
+    }
   });
 
   // Compose button listener
-  $( ".button" ).on('click', function( event ) {
-    if ( $( "form" ).is( ":hidden" ) ) {
+  $(".button").on('click', function(event) {
+    if ($("form").is(":hidden")) {
       $('form').slideDown('slow');// slide the form down
       $('textarea').focus();  // set focus on the textbox
     } else {
-      $( 'form' ).hide('slow');
-    }    
+      $('form').hide('slow');
+    }
   });
   
   // Escape function
@@ -82,8 +83,7 @@ $(document).ready(function() {
     let div = document.createElement('div');
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
-  }
+  };
   // Initialize page with built-in database
   loadtweets();
-
 });

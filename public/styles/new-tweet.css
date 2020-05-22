@@ -1,3 +1,4 @@
+/* form style */
 form > div > button {
   background-color: #4056A1;
   color: #FFFFFF;
@@ -44,6 +45,7 @@ form {
   margin-bottom: 2em;
   display: none;
 }
+/* tweet style */
 article {
   border: 3px solid #172a3a;
   display: flex;
@@ -64,7 +66,7 @@ footer > div {
   margin-top: 1em;
   display: none;
 }
-article>header>div {
+article > header > div {
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -80,7 +82,7 @@ article > header {
   height: 7vh;
   width: 100%;
 }
-article>header>div>p:nth-child(2){
+article > header > div > p:nth-child(2){
   display: none;
 }
 article > p{
@@ -92,14 +94,13 @@ article:hover{
   box-shadow: 10px 5px 5px gray;
   text-shadow: 1px 1px 2px gray;
 }
-article:hover footer>div{
+article:hover footer > div{
   display: initial;
 }
-article:hover header>div>p:nth-child(2){
+article:hover header > div > p:nth-child(2){
   display: initial;
 }
-
-
+/* style for desktop */
 @media only screen and (min-width: 1024px) {
   /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
   body{
