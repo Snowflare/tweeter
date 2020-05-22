@@ -5,27 +5,28 @@
  */
 $(document).ready(function() {
   const createTweetElement = function(tweet) {
-    return (`<article>
-    <header>
-      <img src=${tweet.user.avatars}> 
-      <div class="name">
-        <p>${tweet.user.name}</p>
-        <p class="lastname">${tweet.user.handle}</p>
-      </div>
-      
-    </header>
-    <p>
-      ${escape(tweet.content.text)}
-    </p>
-    <footer>
-      <p>
-        ${tweet.created_at}
-      </p>
-      <div>
-        <a >🚩</a><a>🔗</a><a>❤️</a>
-      </div>
-    </footer>
-  </article>`);
+    return (
+        `<article>
+          <header>
+            <img src=${tweet.user.avatars}> 
+            <div class="name">
+              <p>${tweet.user.name}</p>
+              <p class="lastname">${tweet.user.handle}</p>
+            </div>
+            
+          </header>
+          <p>
+            ${escape(tweet.content.text)}
+          </p>
+          <footer>
+            <p>
+              ${tweet.created_at}
+            </p>
+            <div>
+              <a >🚩</a><a>🔗</a><a>❤️</a>
+            </div>
+          </footer>
+        </article>`);
   }
   const renderTweets = function(tweets) {
     $('main section:nth-child(2)').empty()

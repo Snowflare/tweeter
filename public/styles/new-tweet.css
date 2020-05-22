@@ -72,6 +72,10 @@ article > header {
 article>header>div>p:nth-child(2){
   color: transparent;
 }
+article > p{
+  width: 100%;
+  overflow: scroll;
+}
 
 article:hover{
   box-shadow: 10px 5px 5px gray;
@@ -79,6 +83,32 @@ article:hover{
 }
 @media only screen and (min-width: 1024px) {
   /* Write CSS rules that target Laptop/Desktop screen sizes and beyond */
-  
+  body{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .container{
+    padding: 1em;
+    /* width: 60%; */
+    margin-left: 1em;
+    margin-left: 1em;
+    width: 60%;
+  }
+  body > header {
+    display: flex;
+    justify-content: center;
+    width: 60%;
+    margin-right: 3em;
+    margin-top: 3em;
+    margin-left: 3em;
+  }
+  body > header > div >h2 {
+    margin-top: 0em;
+  }
+  main > section:nth-child(2){
+    overflow: scroll;
+    height: 60vh;
+  }
 }
 
